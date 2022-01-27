@@ -1,21 +1,5 @@
-Revision history for SPVM::JSON
+Revision history for SPVM::IO::File
 
-0.05  2021-12-24
+0.01  2022-01-27
         [CHANGES]
-        * Fix only document.
-
-0.04  2021-12-24
-        [CHANGES]
-        * Catch up with latest SPVM 0.9021.
-
-0.03  2021-12-23
-        [CHANGES]
-        * Catch up with latest SPVM.
-
-0.02  2021-12-21
-        [CHANGES]
-        * Catch up with latest SPVM.
-
-0.01  2021-12-07
-        [CHANGES]
-        * SPVM::JSON is separated from SPVM core module.
+        * First development release
