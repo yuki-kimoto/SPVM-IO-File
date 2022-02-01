@@ -7,6 +7,28 @@
 
 static const char* MFILE = "IO/File.c";
 
+int32_t SPVM__IO__File__init_constant_values(SPVM_ENV* env, SPVM_VALUE* stack) {
+  
+  int32_t e;
+  
+  
+  env->set_class_var_int_by_name(env, "IO::File", "$SEEK_SET", SEEK_SET, &e, MFILE, __LINE__);
+  if (e) { return e; }
+  env->set_class_var_int_by_name(env, "IO::File", "$SEEK_CUR", SEEK_CUR, &e, MFILE, __LINE__);
+  if (e) { return e; }
+  env->set_class_var_int_by_name(env, "IO::File", "$SEEK_END", SEEK_END, &e, MFILE, __LINE__);
+  if (e) { return e; }
+
+  env->set_class_var_int_by_name(env, "IO::File", "$STDIN", fileno(stdin), &e, MFILE, __LINE__);
+  if (e) { return e; }
+  env->set_class_var_int_by_name(env, "IO::File", "$STDOUT", fileno(stdout), &e, MFILE, __LINE__);
+  if (e) { return e; }
+  env->set_class_var_int_by_name(env, "IO::File", "$STDERR", fileno(stderr), &e, MFILE, __LINE__);
+  if (e) { return e; }
+    
+  return 0;
+}
+
 int32_t SPVM__IO__File__readline(SPVM_ENV* env, SPVM_VALUE* stack) {
   
   int32_t e;

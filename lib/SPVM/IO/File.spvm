@@ -1,6 +1,13 @@
 class IO::File : precompile {
   use IO::FileHandle;
   use Fn;
+
+  our $SEEK_SET : ro int;
+  our $SEEK_CUR : ro int;
+  our $SEEK_END : ro int;
+  our $STDIN : ro int;
+  our $STDOUT : ro int;
+  our $STDERR : ro int;
   
   has fh : private ro IO::FileHandle;
   has auto_flush : rw byte;
@@ -15,6 +22,12 @@ class IO::File : precompile {
 
   native static method unlink : void ($file : string);
   native static method rename : void ($src_file : string, $dist_file : string);
+
+  private native static method init_constant_values : void ();
+  
+  INIT {
+    &init_constant_values();
+  }
 
   method slurp : string ($file : string) {
     
