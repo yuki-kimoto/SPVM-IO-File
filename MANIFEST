@@ -12,5 +12,10 @@ MANIFEST			This list of files
 README.md
 t/lib/SPVM/TestCase/Lib/IO/File.spvm
 t/lib/SPVM/TestCase/Lib/IO/FileHandle.spvm
+t/lib/TestFile.pm
 t/SPVM_IO_File.t
 t/SPVM_IO_FileHandle.t
+t/test_files/file_eof.txt
+t/test_files/fread.txt
+t/test_files/fread_eof.txt
+t/test_files/long_line.txt
